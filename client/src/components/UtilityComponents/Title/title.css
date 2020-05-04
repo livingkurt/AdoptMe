@@ -2,4 +2,8 @@
   display: flex;
 }
 
+h1 {
+  margin: 0px;
+}
+
 .show_hide_sidebar_button {}

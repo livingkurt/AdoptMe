@@ -10,7 +10,10 @@ const EditProfile = () => {
   let params = useParams();
   const pet_id = params.id
   useEffect(() => {
-    get_pet()
+    if (pet_id) {
+      get_pet()
+    }
+
   }, [])
 
   const get_pet = async () => {
