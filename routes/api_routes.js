@@ -17,6 +17,18 @@ module.exports = function (app) {
       console.log(err);
     }
   })
+  app.get('/api/pet/:id', async (req, res) => {
+    // console.log({ "api_routes.js - get all": req.body })
+    try {
+      // const request = await Pets.find({}).sort({ x: 1 });
+      const request = await Pets.findOne({ _id: req.params.id })
+      // Send the request back to the front end
+      res.send(request)
+    }
+    catch (err) {
+      console.log(err);
+    }
+  })
   app.post('/api/pet', async (req, res) => {
     console.log({ "API.s": req.body })
     try {

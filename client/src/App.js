@@ -13,7 +13,7 @@ function App() {
           {/* <h3>Find your family</h3> */}
         </Header>
         <BrowserRouter>
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile/:id" component={Profile} />
           <Route path="/editprofile" component={EditProfile} />
         </BrowserRouter>
       </Container>

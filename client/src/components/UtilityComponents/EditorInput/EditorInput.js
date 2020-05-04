@@ -8,7 +8,7 @@ import Label from '../Label/Label'
 const EditorInput = (props) => {
 
   return (
-    <div style={{ width: "100%", paddingTop: "20px" }}>
+    <div style={{ width: "100%", paddingTop: "10px" }}>
       <Label styles={{ marginBottom: "20px" }}>{props.label}</Label>
       <input
         defaultValue={props.value}
