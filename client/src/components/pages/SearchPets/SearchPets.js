@@ -27,7 +27,7 @@ const SearchPets = () => {
   // Loop over pets array and display them on the screen
   return (
     <Section>
-      <Title styles={{ fontSize: "50px", textAlign: "center", width: "100%" }}>Search Pets</Title>
+      <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%" }}>Search Pets</Title>
       <FlexContainer styles={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }}>
         {pets_state.map((pet, index) => {
           return <CardContainer key={index} state={pet} />

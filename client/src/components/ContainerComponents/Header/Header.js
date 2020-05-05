@@ -20,7 +20,6 @@ const Header = (props) => {
 
   return (
     <div className="header">
-
       <Title styles={{ fontSize: "40px", color: "white", textDecoration: 'none' }}><button onClick={redirect_to_search} id="home_button">AdoptMe</button></Title>
       <FlexContainer>
         <Link to="/createpet"><ButtonWord styles={{ fontSize: "16px", marginRight: 10 }} on_click_function={handle_button_click}>Create Pet</ButtonWord></Link>

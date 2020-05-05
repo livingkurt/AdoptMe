@@ -13,7 +13,7 @@ function App() {
       <Background>
         <Header />
         <Container>
-          <Route exact="true" path="/" component={Home} />
+          <Route exact={true} path="/" component={Home} />
           <Route path="/profile/:id" component={Profile} />
           <Route path="/editprofile/:id?" component={EditProfile} />
           <Route path="/createpet/:id?" component={CreatePet} />

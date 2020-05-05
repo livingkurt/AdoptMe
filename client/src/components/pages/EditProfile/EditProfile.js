@@ -65,10 +65,15 @@ const EditProfile = () => {
     history.push('/profile/' + pet_id)
   }
 
+  const handle_cancel = () => {
+    history.push("/profile/" + pet_id)
+  }
+
+
   return (
     <Section>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Edit Pet</Title>
-      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} submit={update_pet} />
+      <Form setState={set_pet_state} state={pet_state} handle_cancel={handle_cancel} on_change_input={on_change_input} submit={update_pet} />
     </Section>
   )
 }

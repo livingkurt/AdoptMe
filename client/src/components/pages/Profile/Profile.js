@@ -39,27 +39,30 @@ const Profile = () => {
     history.push("/editprofile/" + pet_id)
   }
 
+
+
   return (
     <Section>
       <Title styles={{ fontSize: "50px", textAlign: "center", width: "100%" }}>Pet Profile</Title>
       <FlexContainer styles={{ flexDirection: "column" }}>
         <Title styles={{ fontSize: 18 }}>Pet Name</Title>
-        <Label>{pet_state.pet_name}</Label>
+        <Label>{!pet_state.pet_name ? "N/A" : pet_state.pet_name}</Label>
         <Title styles={{ fontSize: 18 }}>Species</Title>
-        <Label>{pet_state.species}</Label>
+        <Label>{!pet_state.species ? "N/A" : pet_state.species}</Label>
         <Title styles={{ fontSize: 18 }}>Breed</Title>
-        <Label>{pet_state.breed}</Label>
+        <Label>{!pet_state.breed ? "N/A" : pet_state.breed}</Label>
         <Title styles={{ fontSize: 18 }}>Sex</Title>
-        <Label>{pet_state.sex}</Label>
+        <Label>{!pet_state.sex ? "N/A" : pet_state.sex}</Label>
         <Title styles={{ fontSize: 18 }}>Weight</Title>
-        <Label>{pet_state.weight}</Label>
+        <Label>{!pet_state.weight ? "N/A" : pet_state.weight}</Label>
         <Title styles={{ fontSize: 18 }}>Estimated Age</Title>
-        <Label>{pet_state.age}</Label>
+        <Label>{!pet_state.age ? "N/A" : pet_state.age}</Label>
         <Title styles={{ fontSize: 18 }}>Location</Title>
-        <Label>{pet_state.location}</Label>
+        <Label>{!pet_state.location ? "N/A" : pet_state.location}</Label>
         <Title styles={{ fontSize: 18 }}>Adoption Fee</Title>
-        <Label>{pet_state.fee}</Label>
+        <Label>{!pet_state.fee ? "N/A" : pet_state.fee}</Label>
         <ButtonWord on_click_function={handle_edit_pet}>Edit Pet</ButtonWord>
+
         {/* <img src={pet_state.image} alt="image"></img> */}
       </FlexContainer>
 

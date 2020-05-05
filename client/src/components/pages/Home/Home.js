@@ -13,11 +13,11 @@ const Home = () => {
   }
 
   return (
-    <Section styles={{ margin: "150px 500px 0px 500px" }}>
+    <Section styles={{ margin: "150px 300px 0px 300px" }}>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Welcome to AdoptMe</Title>
       <Title styles={{ fontSize: "30px", textAlign: "center", width: "100%", margin: "0px" }}>A place where you can be united with a long lost friend</Title>
       <FlexContainer styles={{ justifyContent: "center" }}>
-        <img src="dog_man_1.jpg" height="400px" alt="dogs" />
+        <img src="dog_man_1.jpg" style={{ borderRadius: "15px" }} height="400px" alt="dogs" />
       </FlexContainer>
       <FlexContainer styles={{ justifyContent: "center" }}>
         <Link to="/createpet"><ButtonWord styles={{ fontSize: "16px", marginRight: 10 }} on_click_function={handle_button_click}>Create Pet</ButtonWord></Link>

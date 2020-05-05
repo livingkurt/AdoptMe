@@ -22,14 +22,17 @@ const Form = (props) => {
           <EditorInput value={props.state.age} name="age" id="" on_change_function={props.on_change_input} label="Estimated Age"></EditorInput>
           <EditorInput value={props.state.location} name="location" id="" on_change_function={props.on_change_input} label="Location"></EditorInput>
           <EditorInput value={props.state.fee} name="fee" id="" on_change_function={props.on_change_input} label="Adoption Fee"></EditorInput>
-          <ButtonWord on_click_function={props.submit}>Save Pet!</ButtonWord>
+          <FlexContainer styles={{ justifyContent: "space-between" }}>
+            <ButtonWord on_click_function={props.submit}>Save Pet!</ButtonWord>
+            <ButtonWord on_click_function={props.handle_cancel}>Cancel</ButtonWord>
+          </FlexContainer>
         </BlockContainer>
         <BlockContainer styles={{ width: "50%", textAlign: "center" }}>
           <Title styles={{ width: "100%" }}>Upload Image Here</Title>
           <ImageUpload setState={props.setState} state={props.state} />
         </BlockContainer>
       </FlexContainer>
-    </form>
+    </form >
   );
 }
 
