@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router";
 import { Section, FlexContainer, CardContainer } from '../../ContainerComponents/index'
 import { Title } from '../../UtilityComponents/index'
 import API from '../../../utils/API'
 
-const Profile = (props) => {
-  let params = useParams();
+const SearchPets = () => {
 
-
-  // const pet_id = params.id
+  // Initialize State
   const [pets_state, set_pets_state] = useState([])
 
+  // On Load get all pets in database
   useEffect(() => {
     get_pets()
   }, [])
 
+  // Get all pets and set state
   const get_pets = async () => {
     try {
       const res = await API.get_pets()
@@ -25,7 +24,7 @@ const Profile = (props) => {
       console.log(err);
     }
   }
-
+  // Loop over pets array and display them on the screen
   return (
     <Section>
       <Title styles={{ fontSize: "50px", textAlign: "center", width: "100%" }}>Search Pets</Title>
@@ -39,5 +38,5 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+export default SearchPets
 

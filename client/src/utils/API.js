@@ -10,4 +10,7 @@ export default {
   post_pet: function (pet_data) {
     return axios.post('/api/pet', pet_data);
   },
+  update_pet: function (pet_id, pet_data) {
+    return axios.put('/api/pet/' + pet_id, pet_data);
+  },
 }

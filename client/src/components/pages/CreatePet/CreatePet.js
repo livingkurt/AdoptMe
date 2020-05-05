@@ -6,8 +6,15 @@ import { useHistory } from 'react-router-dom';
 import API from '../../../utils/API'
 
 const EditProfile = () => {
+
+  // Assign Params to variable
   let params = useParams();
+
+  let history = useHistory();
+
   const pet_id = params.id
+
+  // On Load if there is a pet id make request to the database with that key
   useEffect(() => {
     if (pet_id) {
       get_pet()
@@ -15,18 +22,7 @@ const EditProfile = () => {
 
   }, [])
 
-  const get_pet = async () => {
-    try {
-      const res = await API.get_pet(pet_id)
-      set_pet_state(res.data)
-
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-
-  let history = useHistory();
+  // Initalize State
   const [pet_state, set_pet_state] = useState({
     pet_name: "",
     species: "",
@@ -39,14 +35,26 @@ const EditProfile = () => {
     image: ""
   })
 
+  // Get Single Pet from Database
+  const get_pet = async () => {
+    try {
+      const res = await API.get_pet(pet_id)
+      set_pet_state(res.data)
+
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  // When the user types in the inputs it will update the state with the field associated with that input
   const on_change_input = (e) => {
-    // const pet_id = pet_state._id
     const pet_data = e.target.value
     const field_name = e.target.name
-    console.log(pet_data, field_name)
     set_pet_state({ ...pet_state, [field_name]: pet_data })
   }
 
+  // When user submits form post data to database and redirect to the new pet profile
   const save_pet = async (e) => {
     e.preventDefault()
     let id = ""

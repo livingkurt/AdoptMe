@@ -6,24 +6,20 @@ import { useHistory } from 'react-router-dom';
 import API from '../../../utils/API'
 
 const EditProfile = () => {
+
+  // Assign Params to variable
   let params = useParams();
+
+  let history = useHistory();
+
   const pet_id = params.id
+
+  // On Load if there is a pet id make request to the database with that key
   useEffect(() => {
     get_pet()
   }, [])
 
-  const get_pet = async () => {
-    try {
-      const res = await API.get_pet(pet_id)
-      set_pet_state(res.data)
-
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-
-  let history = useHistory();
+  // Initalize State
   const [pet_state, set_pet_state] = useState({
     pet_name: "",
     species: "",
@@ -36,32 +32,40 @@ const EditProfile = () => {
     image: ""
   })
 
+  // Get Single Pet from Database
+  const get_pet = async () => {
+    try {
+      const res = await API.get_pet(pet_id)
+      set_pet_state(res.data)
+
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+  // When the user types in the inputs it will update the state with the field associated with that input
   const on_change_input = (e) => {
     const pet_data = e.target.value
     const field_name = e.target.name
     set_pet_state({ ...pet_state, [field_name]: pet_data })
   }
 
-  const save_pet = async (e) => {
+  // When user submits form post data to database and redirect to the new pet profile
+  const update_pet = async (e) => {
     e.preventDefault()
-    let id = ""
     try {
-      console.log({ "Save Pet": pet_state })
-      const res = await API.post_pet(pet_state)
-      id = res.data._id
-      // console.log(id)
+      const res = await API.update_pet(pet_id, pet_state)
     }
     catch (err) {
       console.log({ "on_change_pet_editor": err });
     }
-    console.log(id)
-    history.push('/profile/' + id)
+    history.push('/profile/' + pet_id)
   }
 
   return (
     <Section>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Create Pet</Title>
-      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
+      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} save_pet={update_pet} />
     </Section>
   )
 }
