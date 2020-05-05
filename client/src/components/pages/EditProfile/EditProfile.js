@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { Section } from '../../ContainerComponents/index'
 import { Form, Title } from '../../UtilityComponents/index'
@@ -34,13 +33,12 @@ const EditProfile = () => {
     age: "",
     location: "",
     fee: "",
+    image: ""
   })
 
   const on_change_input = (e) => {
-    // const pet_id = pet_state._id
     const pet_data = e.target.value
     const field_name = e.target.name
-    console.log(pet_data, field_name)
     set_pet_state({ ...pet_state, [field_name]: pet_data })
   }
 
@@ -59,10 +57,11 @@ const EditProfile = () => {
     console.log(id)
     history.push('/profile/' + id)
   }
+
   return (
     <Section>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Create Pet</Title>
-      <Form state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
+      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
     </Section>
   )
 }

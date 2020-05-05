@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { Section } from '../../ContainerComponents/index'
 import { Form, Title } from '../../UtilityComponents/index'
@@ -37,6 +36,7 @@ const EditProfile = () => {
     age: "",
     location: "",
     fee: "",
+    image: ""
   })
 
   const on_change_input = (e) => {
@@ -51,21 +51,18 @@ const EditProfile = () => {
     e.preventDefault()
     let id = ""
     try {
-      console.log({ "Save Pet": pet_state })
       const res = await API.post_pet(pet_state)
       id = res.data._id
-      // console.log(id)
     }
     catch (err) {
       console.log({ "on_change_pet_editor": err });
     }
-    console.log(id)
     history.push('/profile/' + id)
   }
   return (
     <Section>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Create Pet</Title>
-      <Form state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
+      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
     </Section>
   )
 }

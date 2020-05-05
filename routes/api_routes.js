@@ -1,16 +1,9 @@
 const Pets = require("../models/pet");
-// const axios = require("axios");
-// const mongojs = require('mongojs')
 
-// Export API Routes to Express
 module.exports = function (app) {
-
-
   app.get('/api/pets', async (req, res) => {
-    // console.log({ "api_routes.js - get all": req.body })
     try {
       const request = await Pets.find({})
-      // Send the request back to the front end
       res.send(request)
     }
     catch (err) {
@@ -18,11 +11,8 @@ module.exports = function (app) {
     }
   })
   app.get('/api/pet/:id', async (req, res) => {
-    // console.log({ "api_routes.js - get all": req.body })
     try {
-      // const request = await Pets.find({}).sort({ x: 1 });
       const request = await Pets.findOne({ _id: req.params.id })
-      // Send the request back to the front end
       res.send(request)
     }
     catch (err) {
@@ -41,8 +31,8 @@ module.exports = function (app) {
         age: req.body.age,
         location: req.body.location,
         fee: req.body.fee,
+        image: req.body.image,
       })
-      // Send the request back to the front end
       res.send(request)
     }
     catch (err) {

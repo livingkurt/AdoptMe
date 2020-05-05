@@ -8,7 +8,6 @@ export default {
     return axios.get('/api/pet/' + pet_id);
   },
   post_pet: function (pet_data) {
-    console.log({ "API.s": pet_data })
     return axios.post('/api/pet', pet_data);
   },
 }

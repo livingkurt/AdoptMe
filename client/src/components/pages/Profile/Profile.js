@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { useHistory } from 'react-router-dom';
 import { Section, FlexContainer } from '../../ContainerComponents/index'
 import { Title, Label, ButtonWord } from '../../UtilityComponents/index'
 import API from '../../../utils/API'
 
-const Profile = (props) => {
+const Profile = () => {
   let history = useHistory();
   let params = useParams();
   const pet_id = params.id
@@ -20,7 +19,6 @@ const Profile = (props) => {
     location: "",
     fee: "",
   })
-  // console.log(pet_state)
 
   useEffect(() => {
     get_pet()
@@ -45,23 +43,24 @@ const Profile = (props) => {
     <Section>
       <Title styles={{ fontSize: "50px", textAlign: "center", width: "100%" }}>Pet Profile</Title>
       <FlexContainer styles={{ flexDirection: "column" }}>
-        <Label>Pet Name</Label>
+        <Title styles={{ fontSize: 18 }}>Pet Name</Title>
         <Label>{pet_state.pet_name}</Label>
-        <Label>Species</Label>
+        <Title styles={{ fontSize: 18 }}>Species</Title>
         <Label>{pet_state.species}</Label>
-        <Label>Breed</Label>
+        <Title styles={{ fontSize: 18 }}>Breed</Title>
         <Label>{pet_state.breed}</Label>
-        <Label>Sex</Label>
+        <Title styles={{ fontSize: 18 }}>Sex</Title>
         <Label>{pet_state.sex}</Label>
-        <Label>Weight</Label>
+        <Title styles={{ fontSize: 18 }}>Weight</Title>
         <Label>{pet_state.weight}</Label>
-        <Label>Estimated Age</Label>
+        <Title styles={{ fontSize: 18 }}>Estimated Age</Title>
         <Label>{pet_state.age}</Label>
-        <Label>Location</Label>
+        <Title styles={{ fontSize: 18 }}>Location</Title>
         <Label>{pet_state.location}</Label>
-        <Label>Adoption Fee</Label>
+        <Title styles={{ fontSize: 18 }}>Adoption Fee</Title>
         <Label>{pet_state.fee}</Label>
         <ButtonWord on_click_function={handle_edit_pet}>Edit Pet</ButtonWord>
+        {/* <img src={pet_state.image} alt="image"></img> */}
       </FlexContainer>
 
     </Section>

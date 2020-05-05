@@ -13,6 +13,7 @@ const petSchema = new Schema({
   age: String,
   location: String,
   fee: String,
+  image: Object
 });
 
 const Pet = mongoose.model('Pet', petSchema);
