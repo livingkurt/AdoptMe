@@ -15,7 +15,7 @@ const Header = (props) => {
     console.log("click")
   }
   const redirect_to_search = () => {
-    history.push('/searchpets')
+    history.push('/')
   }
 
   return (

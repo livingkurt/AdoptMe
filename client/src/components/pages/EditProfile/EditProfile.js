@@ -67,7 +67,7 @@ const EditProfile = () => {
 
   return (
     <Section>
-      <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Create Pet</Title>
+      <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Edit Pet</Title>
       <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} submit={update_pet} />
     </Section>
   )

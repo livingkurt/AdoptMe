@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 // Styles
 import './App.css';
 // Components
-import { Profile, EditProfile, CreatePet, SearchPets } from './components/pages/index';
+import { Profile, EditProfile, CreatePet, SearchPets, Home } from './components/pages/index';
 import { Container, Background, Header } from './components/ContainerComponents';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <Background>
         <Header />
         <Container>
+          <Route exact="true" path="/" component={Home} />
           <Route path="/profile/:id" component={Profile} />
           <Route path="/editprofile/:id?" component={EditProfile} />
           <Route path="/createpet/:id?" component={CreatePet} />
