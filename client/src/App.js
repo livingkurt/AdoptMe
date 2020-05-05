@@ -1,6 +1,9 @@
+// React
 import React from 'react';
 import { Route, BrowserRouter as Router } from "react-router-dom";
+// Styles
 import './App.css';
+// Components
 import { Profile, EditProfile, CreatePet, SearchPets } from './components/pages/index';
 import { Container, Background, Header } from './components/ContainerComponents';
 

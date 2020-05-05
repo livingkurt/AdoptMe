@@ -1,8 +1,11 @@
+// React
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router";
+// Components
 import { Section } from '../../ContainerComponents/index'
 import { Form, Title } from '../../UtilityComponents/index'
 import { useHistory } from 'react-router-dom';
+// Utils
 import API from '../../../utils/API'
 
 const EditProfile = () => {
@@ -63,14 +66,14 @@ const EditProfile = () => {
       id = res.data._id
     }
     catch (err) {
-      console.log({ "on_change_pet_editor": err });
+      console.log({ "save_pet": err });
     }
     history.push('/profile/' + id)
   }
   return (
     <Section>
       <Title styles={{ fontSize: "40px", textAlign: "center", width: "100%", margin: "0px" }}>Create Pet</Title>
-      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} save_pet={save_pet} />
+      <Form setState={set_pet_state} state={pet_state} on_change_input={on_change_input} submit={save_pet} />
     </Section>
   )
 }

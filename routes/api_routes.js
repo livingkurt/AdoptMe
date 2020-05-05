@@ -1,6 +1,8 @@
 const Pets = require("../models/pet");
 
 module.exports = function (app) {
+
+  // Get all Pets
   app.get('/api/pets', async (req, res) => {
     try {
       const request = await Pets.find({})
@@ -10,6 +12,8 @@ module.exports = function (app) {
       console.log(err);
     }
   })
+
+  // Get One Pet by ID
   app.get('/api/pet/:id', async (req, res) => {
     try {
       const request = await Pets.findOne({ _id: req.params.id })
@@ -19,6 +23,8 @@ module.exports = function (app) {
       console.log(err);
     }
   })
+
+  // Post One Pet
   app.post('/api/pet', async (req, res) => {
     console.log({ "API.s": req.body })
     try {
@@ -39,6 +45,8 @@ module.exports = function (app) {
       console.log(err);
     }
   })
+
+  // Update One Pet by ID
   app.put('/api/pet/:id', async (req, res) => {
     console.log({ "API.s": req.body })
     try {

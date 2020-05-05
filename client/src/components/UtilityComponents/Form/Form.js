@@ -1,8 +1,8 @@
 // React
 import React from "react";
-
 // Styles
 import './form.css'
+// Components
 import { EditorInput, ButtonWord, Title, ImageUpload } from '../index'
 import { FlexContainer, BlockContainer } from '../../ContainerComponents/index'
 
@@ -22,7 +22,7 @@ const Form = (props) => {
           <EditorInput value={props.state.age} name="age" id="" on_change_function={props.on_change_input} label="Estimated Age"></EditorInput>
           <EditorInput value={props.state.location} name="location" id="" on_change_function={props.on_change_input} label="Location"></EditorInput>
           <EditorInput value={props.state.fee} name="fee" id="" on_change_function={props.on_change_input} label="Adoption Fee"></EditorInput>
-          <ButtonWord on_click_function={props.save_pet}>Save Pet!</ButtonWord>
+          <ButtonWord on_click_function={props.submit}>Save Pet!</ButtonWord>
         </BlockContainer>
         <BlockContainer styles={{ width: "50%", textAlign: "center" }}>
           <Title styles={{ width: "100%" }}>Upload Image Here</Title>

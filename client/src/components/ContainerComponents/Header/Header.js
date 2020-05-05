@@ -1,9 +1,12 @@
+// React
 import React from 'react'
+import { Link, useHistory } from "react-router-dom";
+// Styles
 import './header.css'
+// Components
 import { FlexContainer } from '../index';
-import { Link } from "react-router-dom";
 import { ButtonWord, Title } from '../../UtilityComponents/index';
-import { useHistory } from 'react-router-dom';
+
 
 
 const Header = (props) => {

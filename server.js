@@ -5,8 +5,6 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000
 
-
-
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/adopt_me_db",
   {
@@ -16,10 +14,8 @@ mongoose.connect(
   }
 );
 
-
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-
 
 require('./routes/api_routes')(app);
 

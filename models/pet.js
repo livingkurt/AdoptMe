@@ -9,10 +9,10 @@ const petSchema = new Schema({
   species: String,
   breed: String,
   sex: String,
-  weight: String,
-  age: String,
+  weight: Number,
+  age: Number,
   location: String,
-  fee: String,
+  fee: Number,
   image: Object
 });
 

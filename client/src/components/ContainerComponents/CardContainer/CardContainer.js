@@ -1,10 +1,12 @@
 // React
 import React from "react";
+import { useHistory } from 'react-router-dom';
 // Styles
 import './card_container.css'
+// Components
 import { FlexContainer } from '../index'
 import { Title, Label, ButtonWord } from '../../UtilityComponents/index'
-import { useHistory } from 'react-router-dom';
+
 
 
 function CardContainer(props) {
