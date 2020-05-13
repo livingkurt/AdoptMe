@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 // Utils
 import API from '../../../utils/API'
 
-const EditProfile = () => {
+const CreatePet = () => {
 
   // Assign Params to variable
   let params = useParams();
@@ -83,5 +83,5 @@ const EditProfile = () => {
   )
 }
 
-export default EditProfile
+export default CreatePet
 
